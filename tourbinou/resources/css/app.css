@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #E5E5E5;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+main {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card {
+    background-color: #F5F5F5;
+    padding: 1rem;
+}
+
+.label-tourbinou {
+    background-color: #FE7F00;
+    width: fit-content;
+    padding: .2rem .4rem;
+    color: #F5F5F5;
+}
+
+#store-page #container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 16px;
+}
+
+#store-page #container .card {
+    width: calc((100% - (16px * 0)) / 1);
+    flex-basis: fit-content;
+}
+
+#store-page #container .card .card-img-top {
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+}
+
+.btn-edit:hover svg.pen path {
+    fill: #FE7F00;
+}
+
+.btn-delete:hover svg.trash path {
+    fill: #EF4444;
+}
+
+#loading {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: #E5E5E5;
+    z-index: 99;
+    flex-direction: column;
+}
+
+#loading #container {
+    max-width: 350px;
+    width: 100%;
+    align-items: baseline;
+}
+#loading #loading-image {
+    z-index: 100;
+    width: 100%;
+}
+
+#loading #bar-container {
+    margin-top: 2rem;
+    height: 10px;
+    animation: loadingJ 2s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+#loading #bar-container {
+    margin-top: 2rem;
+    height: 10px;
+    width: 100%;
+    animation: loadingContainer 2s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+#loading #bar {
+    height: 10px;
+    width: 25px;
+    animation: loadingBar 2s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+@keyframes loadingContainer {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(calc(100% - 25px), 0);
+    }
+}
+
+@keyframes loadingBar {
+    50% {
+        background-color: #FE7F00;
+    }
+}
+
+
+.btn-tourbinou {
+    background-color: #FE7F00;
+    color: #F5F5F5;
+    height: 3rem;
+}
+
+.btn-tourbinou.cancel {
+    border: solid 2px #EF4444;
+    background-color: transparent;
+    color: #EF4444;
+}
+
+.btn-tourbinou.save {
+    background-color: #00BB98;
+}
+
+.input-tourbinou {
+    background-color: #E5E5E5;
+    height: 42px;
+    font-size: 1rem;
+
+    &::placeholder {
+        font-size: 1rem;
+    }
+}
+
+.textarea-tourbinou {
+    background-color: #E5E5E5;
+    min-height: 380px;
+    width: 100%;
+    font-size: 1rem;
+
+    &::placeholder {
+        font-size: 1rem;
+    }
+}
+
+.textarea-tourbinou.success,
+.textarea-tourbinou-message.success,
+.input-tourbinou.success,
+.input-tourbinou-message.success {
+    --tw-ring-color: #00BB98;
+}
+
+.textarea-tourbinou-message.success,
+.input-tourbinou-message.success {
+    color: #00BB98;
+}
+
+.textarea-tourbinou.error,
+.textarea-tourbinou-message.error,
+.input-tourbinou.error,
+.input-tourbinou-message.error {
+    --tw-ring-color: #EF4444;
+}
+
+.textarea-tourbinou-message.error,
+.input-tourbinou-message.error {
+    color: #EF4444;
+}
+
+.datatable .dt-column-title,
+.datatable th {
+    text-align: left;
+}
+
+.datatable .dt-layout-table table th:not(:first-child):not(:last-child),
+.datatable .dt-layout-table table td:not(:first-child):not(:last-child) {
+    text-align: center;
+}
+
+.datatable .dt-layout-table {
+    border: 1px solid #E5E5E5;
+    border-radius: .3rem
+}
+
+.datatable .dt-layout-table table {
+    margin: 1rem 1rem .5rem 1rem;
+    width: calc(100% - 2rem) !important;
+}
+
+.datatable .dt-layout-table table th,
+.datatable .dt-layout-table table td {
+    padding-bottom: .5rem;
+}
+
+
+.datatable .dt-layout-table table tr {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.datatable .dt-layout-table table tr:last-child {
+    border-bottom: none;
+}
+
+.datatable .dt-layout-table table tr td {
+    padding-top: .5rem;
+}
+
+.datatable .dt-layout-table table th,
+.datatable .dt-layout-table table tr {
+    margin: 1rem;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.datatable .dt-paging-button {
+    margin-right: .3em;
+}
+
+.datatable .dt-paging-button.last,
+.datatable .dt-paging-button.first {
+    display: none;
+}
+
+.datatable .dt-paging-button.current {
+    background-color: #fe7f00;
+    color: #f5f5f5;
+    padding: 0 0.4rem;
+    border-radius: .3rem;
+}
+
+.datatable .dt-layout-row:last-child {
+    display: flex;
+    margin-top: 1rem;
+    flex-grow: 1;
+    justify-content: space-between;
+    font-size: .9rem;
+}
+
+#admin-navbar {
+    background-color: #F5F5F5;
+    color: #171717;
+}
+
+#admin-navbar #hero-logo {
+    height: 30px;
+}
+
+#admin-navbar #nav-links a {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#admin-navbar #nav-links a:hover {
+    color: #FE7F00;
+}
+
+#admin-navbar #nav-links #logout-icon {
+    height: 1rem;
+}
+
+#admin-navbar #nav-links a:hover #logout-icon path{
+    fill: #FE7F00;
+}
+
+
+#login-page {
+    background-color: #E5E5E5;
+}
+
+#login-page #container {
+    background-color: #F5F5F5;
+    padding: 2rem;
+    width: 100vw;
+}
+
+#login-page #hero-logo {
+    width: 100%;
+}
+
+#login-page #form {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#tour-list-page #container,
+#tour-save-page #container,
+#destination-list-page #container,
+#destination-save-page #container {
+    background-color: #F5F5F5;
+    padding: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+/* sm */
+@media (min-width: 640px) {  }
+
+
+/* md */
+@media (min-width: 768px) {
+    main {
+        min-height: calc(100vh - 130.5px);
+    }
+
+    #login-page #container {
+        width: 400px;
+    }
+
+    #admin-navbar #hero-logo {
+        height: auto;
+        width: 100%;
+    }
+
+    #admin-navbar #nav-links a {
+        font-size: 1.2rem;
+    }
+
+    #admin-navbar #nav-links #logout-icon {
+        height: 1.2rem;
+    }
+
+    #store-page #container .card {
+        width: calc((100% - (16px * 2)) / 3);
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+    #store-page #container .card {
+        width: calc((100% - (16px * 3)) / 4);
+    }
+}
+
+/* xl */
+@media (min-width: 1280px) {  }
+
+/* xxl */
+@media (min-width: 1536px) {  }

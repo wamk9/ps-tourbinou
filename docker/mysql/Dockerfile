@@ -1,0 +1,3 @@
+FROM mysql:latest
+ENV MYSQL_ROOT_PASSWORD=teste123@
+ENV MYSQL_DATABASE=tourbinou
