@@ -5,8 +5,11 @@ O projeto foi desenvolvido baseado em informações prestadas pela empresa Tourb
 
 Este foi desenvolvido utilizando Laravel + VueJS, junto com alguns pacotes adicionais como Vuex, VueCookies, TailwindCSS, Inertia, ZiggyJS, entre outros...
 
+## Para usuários Linux
+Para usuários de Docker no Linux, recomenda-se executar o comando `chmod u+x caminha/do/projeto/docker/php/php_init_db.sh`, pois podem ocorrer problemas no momento de criar o ambiente. 
+
 ## Criando ambiente
-O projeto foi criado utlizando o Docker, como pode ser visto na pasta raiz do mesmo, sendo assim podemos criar nosso ambiente após fazer o git clone utilizando o seguinte comando no terminal, dentro da respectiva pasta do projeto:
+O projeto foi criado utlizando o Docker, como pode ser visto na pasta raiz do mesmo, sendo assim podemos criar nosso ambiente após fazer o git clone utilizando o seguinte comando no terminal, dentro da respectiva pasta do projeto (Lembre-se de fazer a execução do comando com previlégios de administrador):
 
 ```
 docker-compose up --build -d
